@@ -1,3 +1,0 @@
-[submodule "data"]
-	path = data
-	url = https://github.com/timrogers/airport-codes.git
