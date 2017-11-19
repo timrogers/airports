@@ -14,11 +14,11 @@ RSpec.describe Airports do
       let(:iata_code) { "LHR" }
 
       it { is_expected.to be_a(Airports::Airport) }
-      its(:name) { is_expected.to eq("Heathrow") }
+      its(:name) { is_expected.to eq("London Heathrow Airport") }
     end
 
     context "with an invalid IATA code" do
-      let(:iata_code) { "LOL" }
+      let(:iata_code) { "XOX" }
 
       it { is_expected.to be_nil }
 
