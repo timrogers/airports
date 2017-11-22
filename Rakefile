@@ -27,6 +27,20 @@ task :update do
       dst: row[10]
     }
   end.
+    tap do |data|
+      data["HYD"] = {
+        name: "Rajiv Gandhi International Airport",
+        city: "Hyderabad",
+        country: "India",
+        iata: "HYD",
+        icao: "VOHS",
+        latitude: "17.2403",
+        longitude: "78.4294",
+        altitude: nil,
+        timezone: "N",
+        dst: "5.5",
+      }
+    end.
     # We aren't interested in airports with no IATA code
     reject { |code, _| code.nil? || code == "" }
 
