@@ -37,11 +37,11 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/timrogers/mummy. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/timrogers/airports. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
 
 ## Acknowledgements
 
-The data is taken from <https://github.com/ram-nadella/airport-codes>, which uses source data from [OpenFlights](http://openflights.org/). Source data is included using [Git submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules).
+Big thanks to [OpenFlights](http://openflights.org) for collecting and making this data available. Check out their website for additional data about airlines, routes etc.
 
 ## License
 
