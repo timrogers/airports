@@ -4,12 +4,14 @@
 
 Airports gives you access to data on airports around the world.
 
+It's based on data from [OpenFlights](http://openflights.org), with a bit of massaging on the way (dropping airports without an IATA code, giving Doha its IATA code and adding Hyderabad which is missing entirely).
+
 ## Usage
 
-Install the gem *(Ruby 2.1.0 and later only)*:
+Install the gem by adding it to your Gemfile:
 
-```bash
-$ gem install airports
+```ruby
+gem 'airports', '~> 1.0.0'
 ```
 
 You can then look up an airport by its IATA code (e.g. `LHR` for London Heathrow) using `Airports.find_by_iata_code`, which returns an object with a bunch of accessors like `name` and `city`:
@@ -36,6 +38,8 @@ After checking out the repo, run `bin/setup` to install dependencies. Then, run 
 To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
 
 ## Contributing
+
+To update the data included in the gem, just run `bundle exec rake update` and make a pull request with the changes. This will pull the latest data from [OpenFlights](http://openflights.org).
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/timrogers/airports. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
 

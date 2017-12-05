@@ -28,6 +28,7 @@ task :update do
     }
   end.
     tap do |data|
+      # Hyderabad (HYD) is missing, so add it in
       data["HYD"] = {
         name: "Rajiv Gandhi International Airport",
         city: "Hyderabad",
