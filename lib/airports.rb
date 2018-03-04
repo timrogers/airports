@@ -12,6 +12,16 @@ module Airports
       new(airport_data.each_with_object({}) { |(k,v), h| h[k.to_sym] = v })
   end
 
+  def self.find_by_icao_code(icao_code)
+    return unless icao_code.length == 4
+
+    index = icao_codes.index(icao_code)
+    return unless index
+    iata_code = self.iata_codes[index]
+
+    self.find_by_iata_code(iata_code)
+  end
+
   def self.iata_codes
     parsed_data.keys
   end

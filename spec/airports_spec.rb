@@ -63,7 +63,22 @@ RSpec.describe Airports do
       let(:icao_code) { "KCRG" }
 
       it { is_expected.to be_a(Airports::Airport) }
-      its(:name) { is_expected.to eq("Craig") }
+      its(:name) { is_expected.to eq("Jacksonville Executive at Craig Airport") }
+    end
+
+    context "with an invalid ICAO code" do
+      let(:icao_code) { "XOXO" }
+
+      it { is_expected.to be_nil }
+
+      context "with a code that is too long" do
+        let(:icao_code) { "ALICE" }
+
+        it "doesn't try to look it up" do
+          expect(Airports.parsed_data).not_to receive(:fetch).with(icao_code, nil)
+          find_by_icao_code
+        end
+      end
     end
   end
 end
