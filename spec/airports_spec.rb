@@ -40,10 +40,30 @@ RSpec.describe Airports do
     it { is_expected.to include("LHR") }
   end
 
+  describe ".icao_codes" do
+    subject { described_class.icao_codes }
+
+    it { is_expected.to be_a(Array) }
+    it { is_expected.to include("KCRG") }
+  end
+
   describe ".all" do
     subject { described_class.all }
 
     it { is_expected.to be_a(Array) }
     its(:first) { is_expected.to be_a(Airports::Airport) }
+  end
+
+  describe ".find_by_icao_code" do
+    subject(:find_by_icao_code) do
+      described_class.find_by_icao_code(icao_code)
+    end
+
+    context "with a valid ICAO code" do
+      let(:icao_code) { "KCRG" }
+
+      it { is_expected.to be_a(Airports::Airport) }
+      its(:name) { is_expected.to eq("Craig") }
+    end
   end
 end
