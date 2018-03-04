@@ -11,7 +11,7 @@ It's based on data from [OpenFlights](http://openflights.org), with a bit of mas
 Install the gem by adding it to your Gemfile:
 
 ```ruby
-gem 'airports', '~> 1.0.0'
+gem 'airports', '~> 1.1.0'
 ```
 
 You can then look up an airport by its IATA code (e.g. `LHR` for London Heathrow) using `Airports.find_by_iata_code`, which returns an object with a bunch of accessors like `name` and `city`:
@@ -19,6 +19,16 @@ You can then look up an airport by its IATA code (e.g. `LHR` for London Heathrow
 ```ruby
 Airports.find_by_iata_code("LHR")
 => #<Airports::Airport:0x007fd9a1bbd550 @name="Heathrow", @city="London", @country="United Kingdom", @iata="LHR", @icao="EGLL", @latitude="51.4775", @longitude="-0.461389", @altitude="83", @timezone="0", @dst="E">
+```
+
+You can also look up an airport by its ICAO code.
+
+```ruby
+Airports.find_by_iata_code("KCRG")
+=> #<Airports::Airport:0x00007fb548bea898 @altitude="41", @city="Jacksonville",
+@country="United States", @dst="\\N", @iata="CRG", @icao="KCRG",
+@latitude="30.3362998962", @longitude="-81.51439666750001", @name="Jacksonville
+Executive at Craig Airport", @timezone="\\N">
 ```
 
 A couple of other methods provide access to aggregate data.

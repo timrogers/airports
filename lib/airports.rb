@@ -1,7 +1,6 @@
 require 'json'
 require 'airports/version'
 require 'airports/airport'
-require 'pry'
 
 module Airports
   def self.find_by_iata_code(iata_code)
