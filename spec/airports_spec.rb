@@ -1,8 +1,8 @@
-require 'spec_helper'
+require "spec_helper"
 
 RSpec.describe Airports do
   it "has a version number" do
-    expect(Airports::VERSION).not_to be nil
+    expect(Airports::VERSION).to_not be nil
   end
 
   describe ".find_by_iata_code" do
@@ -26,7 +26,7 @@ RSpec.describe Airports do
         let(:iata_code) { "ALICE" }
 
         it "doesn't try to look it up" do
-          expect(Airports.parsed_data).not_to receive(:fetch).with(iata_code, nil)
+          expect(described_class.parsed_data).to_not receive(:fetch).with(iata_code, nil)
           find_by_iata_code
         end
       end
@@ -68,7 +68,7 @@ RSpec.describe Airports do
         let(:icao_code) { "ALICE" }
 
         it "doesn't try to look it up" do
-          expect(Airports.parsed_data).not_to receive(:fetch).with(icao_code, nil)
+          expect(described_class.parsed_data).to_not receive(:fetch).with(icao_code, nil)
           find_by_icao_code
         end
       end

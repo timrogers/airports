@@ -8,7 +8,7 @@ RSpec::Core::RakeTask.new(:spec)
 
 task :update do
   raw_data = open("https://raw.githubusercontent.com/jpatokal/openflights/master/data/airports.dat").read
-  cleaned_data = raw_data.gsub(/\\"/,'""')
+  cleaned_data = raw_data.gsub(/\\"/, '""')
 
   data = CSV.parse(cleaned_data).each_with_object({}) do |row, accumulator|
     # Doha is missing its IATA code, for some reason 🙄
@@ -24,7 +24,7 @@ task :update do
       longitude: row[7],
       altitude: row[8],
       timezone: row[9],
-      dst: row[10]
+      dst: row[10],
     }
   end.
     tap do |data|
@@ -48,4 +48,4 @@ task :update do
   File.open("data/airports.json", "w").puts JSON.generate(data)
 end
 
-task :default => :spec
+task default: :spec
