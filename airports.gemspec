@@ -4,28 +4,18 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "airports/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "airports"
-  spec.version       = Airports::VERSION
-  spec.authors       = ["Tim Rogers"]
-  spec.email         = ["me@timrogers.co.uk"]
+  spec.name = "airports"
+  spec.version = Airports::VERSION
+  spec.authors = ["Tim Rogers"]
+  spec.email = ["me@timrogers.co.uk"]
 
-  spec.summary       = "Access data on airports from around the world"
-  spec.description   = "Access data on airports from around the world"
-  spec.homepage      = "https://github.com/timrogers/airports"
-  spec.license       = "MIT"
+  spec.summary = "Access data on airports from around the world"
+  spec.description = "Access data on airports from around the world"
+  spec.homepage = "https://github.com/timrogers/airports"
+  spec.license = "MIT"
 
-  spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
-
-  gem_dir = __dir__ + "/"
-  `git submodule --quiet foreach pwd`.split($OUTPUT_RECORD_SEPARATOR).each do |submodule_path|
-    Dir.chdir(submodule_path) do
-      submodule_relative_path = submodule_path.sub gem_dir, ""
-      # issue git ls-files in submodule's directory and
-      # prepend the submodule path to create absolute file paths
-      `git ls-files`.split($OUTPUT_RECORD_SEPARATOR).each do |filename|
-        spec.files << "#{submodule_relative_path}/#{filename}"
-      end
-    end
+  spec.files = `git ls-files -z`.split("\x0").reject do |f|
+    f.match(%r{^(test|spec|features)/})
   end
 
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }

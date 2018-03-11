@@ -7,10 +7,11 @@ require "open-uri"
 RSpec::Core::RakeTask.new(:spec)
 
 task :update do
-  raw_data = open("https://raw.githubusercontent.com/jpatokal/openflights/master/data/airports.dat").read
+  raw_data = open("https://raw.githubusercontent.com/jpatokal/openflights/master/data/" \
+                  "airports.dat").read
   cleaned_data = raw_data.gsub(/\\"/, '""')
 
-  data = CSV.parse(cleaned_data).each_with_object({}) do |row, accumulator|
+  cleaned_data = CSV.parse(cleaned_data).each_with_object({}) do |row, accumulator|
     # Doha is missing its IATA code, for some reason 🙄
     iata_code = row[5] == "OTBD" ? "DOH" : row[4]
 
@@ -26,26 +27,25 @@ task :update do
       timezone: row[9],
       dst: row[10],
     }
-  end.
-    tap do |data|
-      # Hyderabad (HYD) is missing, so add it in
-      data["HYD"] = {
-        name: "Rajiv Gandhi International Airport",
-        city: "Hyderabad",
-        country: "India",
-        iata: "HYD",
-        icao: "VOHS",
-        latitude: "17.2403",
-        longitude: "78.4294",
-        altitude: nil,
-        timezone: "N",
-        dst: "5.5",
-      }
-    end.
-    # We aren't interested in airports with no IATA code
-    reject { |code, _| code.nil? || code == "" }
+  end
 
-  File.open("data/airports.json", "w").puts JSON.generate(data)
+  # Hyderabad (HYD) is missing, so add it in
+  cleaned_data["HYD"] = {
+    name: "Rajiv Gandhi International Airport",
+    city: "Hyderabad",
+    country: "India",
+    iata: "HYD",
+    icao: "VOHS",
+    latitude: "17.2403",
+    longitude: "78.4294",
+    altitude: nil,
+    timezone: "N",
+    dst: "5.5",
+  }
+
+  cleaned_data = cleaned_data.reject { |code, _| code.nil? || code == "" }
+
+  File.open("data/airports.json", "w").puts JSON.generate(cleaned_data)
 end
 
 task default: :spec

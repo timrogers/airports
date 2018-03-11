@@ -21,14 +21,14 @@ RSpec.describe Airports do
       let(:iata_code) { "XOX" }
 
       it { is_expected.to be_nil }
+    end
 
-      context "with a code that is too long" do
-        let(:iata_code) { "ALICE" }
+    context "with a code that is too long" do
+      let(:iata_code) { "ALICE" }
 
-        it "doesn't try to look it up" do
-          expect(described_class.parsed_data).to_not receive(:fetch).with(iata_code, nil)
-          find_by_iata_code
-        end
+      it "doesn't try to look it up" do
+        expect(described_class.parsed_data).to_not receive(:fetch).with(iata_code, nil)
+        find_by_iata_code
       end
     end
   end
@@ -63,14 +63,14 @@ RSpec.describe Airports do
       let(:icao_code) { "XOXO" }
 
       it { is_expected.to be_nil }
+    end
 
-      context "with a code that is too long" do
-        let(:icao_code) { "ALICE" }
+    context "with a code that is too long" do
+      let(:icao_code) { "ALICE" }
 
-        it "doesn't try to look it up" do
-          expect(described_class.parsed_data).to_not receive(:fetch).with(icao_code, nil)
-          find_by_icao_code
-        end
+      it "doesn't try to look it up" do
+        expect(described_class.parsed_data).to_not receive(:fetch).with(icao_code, nil)
+        find_by_icao_code
       end
     end
   end
