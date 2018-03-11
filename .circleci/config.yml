@@ -1,0 +1,56 @@
+version: 2
+
+references:
+  steps: &steps
+    - checkout
+
+    - type: cache-restore
+      key: airports-bundler-{{ checksum "airports.gemspec" }}
+
+    - run: gem install bundler
+
+    - run: bundle install --path vendor/bundle
+
+    - type: cache-save
+      key: airports-bundler-{{ checksum "airports.gemspec" }}
+      paths:
+        - vendor/bundle
+
+    - type: shell
+      command: |
+        bundle exec rspec --profile 10 \
+                          --format RspecJunitFormatter \
+                          --out /tmp/test-results/rspec.xml \
+                          --format progress \
+                          spec
+
+    - type: store_test_results
+      path: /tmp/test-results
+
+    - run: bundle exec rubocop
+jobs:
+  build-ruby22:
+    docker:
+      - image: ruby:2.2
+    steps: *steps
+  build-ruby23:
+    docker:
+      - image: ruby:2.3
+    steps: *steps
+  build-ruby24:
+    docker:
+      - image: ruby:2.4
+    steps: *steps
+  build-ruby25:
+    docker:
+      - image: ruby:2.5
+    steps: *steps
+
+workflows:
+  version: 2
+  tests:
+    jobs:
+      - build-ruby22
+      - build-ruby23
+      - build-ruby24
+      - build-ruby25
