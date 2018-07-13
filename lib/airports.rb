@@ -15,7 +15,10 @@ module Airports
   
   def self.find_by_city(city)
     return unless city.length < 1
-    airport_data = parsed_data.fetch(city, nil)
+
+    airport_data = parsed_data.values.find do |data|
+      data["city"] == city
+    end
 
     return unless airport_data
 
