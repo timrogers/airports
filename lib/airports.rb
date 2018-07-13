@@ -12,6 +12,16 @@ module Airports
     Airport.
       new(airport_data.each_with_object({}) { |(k, v), h| h[k.to_sym] = v })
   end
+  
+  def self.find_by_city(city)
+    return unless city.length < 1
+    airport_data = parsed_data.fetch(city, nil)
+
+    return unless airport_data
+
+    Airport.
+      new(airport_data.each_with_object({}) { |(k, v), h| h[k.to_sym] = v })
+  end
 
   def self.find_by_icao_code(icao_code)
     return unless icao_code.length == 4
