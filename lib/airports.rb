@@ -14,8 +14,7 @@ module Airports
   end
   
   def self.find_all_by_city(city)
-    airports = parsed_data.values.find_all { |d| d["city"].downcase == city.downcase }
-    return airports
+    parsed_data.values.find_all { |d| d["city"].downcase == city.downcase }
   end
 
   def self.find_by_icao_code(icao_code)
