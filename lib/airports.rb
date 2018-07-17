@@ -13,17 +13,9 @@ module Airports
       new(airport_data.each_with_object({}) { |(k, v), h| h[k.to_sym] = v })
   end
   
-  def self.find_by_city(city)
-    return unless city.length < 1
-
-    airport_data = parsed_data.values.find do |data|
-      data["city"] == city
-    end
-
-    return unless airport_data
-
-    Airport.
-      new(airport_data.each_with_object({}) { |(k, v), h| h[k.to_sym] = v })
+  def self.find_all_by_city(city)
+    airport_data = parsed_data.values.find_all { |d| d["city"].downcase == city.downcase }
+    return airport_data
   end
 
   def self.find_by_icao_code(icao_code)
