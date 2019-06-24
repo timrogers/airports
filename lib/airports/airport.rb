@@ -1,10 +1,10 @@
 module Airports
   class Airport
     attr_reader :name, :city, :country, :iata, :icao, :latitude, :longitude,
-                :altitude, :timezone, :dst
+                :altitude, :timezone, :dst, :tz_name
 
     def initialize(name:, city:, country:, iata:, icao:, latitude:, longitude:,
-                   altitude:, timezone:, dst:)
+                   altitude:, timezone:, dst:, tz_name:)
       @name = name
       @city = city
       @country = country
@@ -15,6 +15,7 @@ module Airports
       @altitude = altitude
       @timezone = timezone
       @dst = dst
+      @tz_name = tz_name
     end
   end
 end
