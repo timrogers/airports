@@ -11,24 +11,21 @@ It's based on data from [OpenFlights](http://openflights.org), with a bit of mas
 Install the gem by adding it to your Gemfile:
 
 ```ruby
-gem 'airports', '~> 1.2.0'
+gem 'airports', '~> 1.3.0'
 ```
 
 You can then look up an airport by its IATA code (e.g. `LHR` for London Heathrow) using `Airports.find_by_iata_code`, which returns an object with a bunch of accessors like `name` and `city`:
 
 ```ruby
 Airports.find_by_iata_code("LHR")
-=> #<Airports::Airport:0x007fd9a1bbd550 @name="Heathrow", @city="London", @country="United Kingdom", @iata="LHR", @icao="EGLL", @latitude="51.4775", @longitude="-0.461389", @altitude="83", @timezone="0", @dst="E">
+=> #<Airports::Airport:0x00007fdbd1df68d0 @name="London Heathrow Airport", @city="London", @country="United Kingdom", @iata="LHR", @icao="EGLL", @latitude="51.4706", @longitude="-0.461941", @altitude="83", @timezone="0", @dst="E", @tz_name="Europe/London">
 ```
 
 You can also look up an airport by its ICAO code.
 
 ```ruby
-Airports.find_by_iata_code("KCRG")
-=> #<Airports::Airport:0x00007fb548bea898 @altitude="41", @city="Jacksonville",
-@country="United States", @dst="\\N", @iata="CRG", @icao="KCRG",
-@latitude="30.3362998962", @longitude="-81.51439666750001", @name="Jacksonville
-Executive at Craig Airport", @timezone="\\N">
+Airports.find_by_icao_code("KCRG")
+=> #<Airports::Airport:0x00007fdbd1d955d0 @name="Jacksonville Executive at Craig Airport", @city="Jacksonville", @country="United States", @iata="CRG", @icao="KCRG", @latitude="30.3362998962", @longitude="-81.51439666750001", @altitude="41", @timezone="\\N", @dst="\\N", @tz_name="\\N">
 ```
 
 A couple of other methods provide access to aggregate data.
