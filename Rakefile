@@ -26,6 +26,7 @@ task :update do
       altitude: row[8],
       timezone: row[9],
       dst: row[10],
+      tz_name: row[11],
     }
   end
 
@@ -41,6 +42,7 @@ task :update do
     altitude: nil,
     timezone: "N",
     dst: "5.5",
+    tz_name: "Asia/Calcutta"
   }
 
   cleaned_data = cleaned_data.reject { |code, _| code.nil? || code == "" }
