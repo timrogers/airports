@@ -25,7 +25,9 @@ task :update do
     # Doha is missing its IATA code, for some reason 🙄
     iata_code = row[5] == "OTBD" ? "DOH" : row[4]
 
+    # We'll skip other airports which don't have IATA codes
     next unless iata_code != "\\N"
+
     accumulator[iata_code] = {
       name: check_for_empty_data(row[1]),
       city: check_for_empty_data(row[2]),
