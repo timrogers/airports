@@ -3,6 +3,7 @@ module Airports
     attr_reader :name, :city, :country, :iata, :icao, :latitude, :longitude,
                 :altitude, :timezone, :dst, :tz_name
 
+    # rubocop:disable Metrics/MethodLength
     def initialize(name:, city:, country:, iata:, icao:, latitude:, longitude:,
                    altitude:, timezone:, dst:, tz_name:)
       @name = name
@@ -17,5 +18,6 @@ module Airports
       @dst = dst
       @tz_name = tz_name
     end
+    # rubocop:enable Metrics/MethodLength
   end
 end
