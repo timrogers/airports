@@ -56,8 +56,6 @@ task :update do
     tz_name: "Asia/Calcutta",
   }
 
-  cleaned_data = cleaned_data.reject { |code, _| code.nil? || code == "" }
-
   File.open("data/airports.json", "w").puts JSON.generate(cleaned_data)
 end
 
