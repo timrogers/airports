@@ -7,6 +7,7 @@ require "airports/airport"
 module Airports
   def self.find_by_iata_code(iata_code)
     return unless iata_code.length == 3
+
     airport_data = parsed_data.fetch(iata_code, nil)
 
     return unless airport_data
