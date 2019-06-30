@@ -25,21 +25,20 @@ task :update do
     # Doha is missing its IATA code, for some reason 🙄
     iata_code = row[5] == "OTBD" ? "DOH" : row[4]
 
-    if iata_code != "\\N"
-      accumulator[iata_code] = {
-        name: check_for_empty_data(row[1]),
-        city: check_for_empty_data(row[2]),
-        country: check_for_empty_data(row[3]),
-        iata: iata_code,
-        icao: check_for_empty_data(row[5]),
-        latitude: check_for_empty_data(row[6]),
-        longitude: check_for_empty_data(row[7]),
-        altitude: check_for_empty_data(row[8]),
-        timezone: check_for_empty_data(row[9]),
-        dst: check_for_empty_data(row[10]),
-        tz_name: check_for_empty_data(row[11]),
-      }
-    end
+    next unless iata_code != "\\N"
+    accumulator[iata_code] = {
+      name: check_for_empty_data(row[1]),
+      city: check_for_empty_data(row[2]),
+      country: check_for_empty_data(row[3]),
+      iata: iata_code,
+      icao: check_for_empty_data(row[5]),
+      latitude: check_for_empty_data(row[6]),
+      longitude: check_for_empty_data(row[7]),
+      altitude: check_for_empty_data(row[8]),
+      timezone: check_for_empty_data(row[9]),
+      dst: check_for_empty_data(row[10]),
+      tz_name: check_for_empty_data(row[11]),
+    }
   end
 
   # Hyderabad (HYD) is missing, so add it in
@@ -54,7 +53,7 @@ task :update do
     altitude: nil,
     timezone: "N",
     dst: "5.5",
-    tz_name: "Asia/Calcutta"
+    tz_name: "Asia/Calcutta",
   }
 
   cleaned_data = cleaned_data.reject { |code, _| code.nil? || code == "" }
