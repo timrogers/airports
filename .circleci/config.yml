@@ -29,14 +29,6 @@ references:
 
     - run: bundle exec rubocop
 jobs:
-  build-ruby22:
-    docker:
-      - image: ruby:2.2
-    steps: *steps
-  build-ruby23:
-    docker:
-      - image: ruby:2.3
-    steps: *steps
   build-ruby24:
     docker:
       - image: ruby:2.4
@@ -45,12 +37,9 @@ jobs:
     docker:
       - image: ruby:2.5
     steps: *steps
-
 workflows:
   version: 2
   tests:
     jobs:
-      - build-ruby22
-      - build-ruby23
       - build-ruby24
       - build-ruby25
