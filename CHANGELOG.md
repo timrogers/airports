@@ -1,6 +1,12 @@
+# v1.4.0 (30 June 2019)
+
+* Drop support for Ruby 2.2 and 2.3, which are no longer officially supported (@timrogers)
+* Test against Ruby 2.6 (@timrogers)
+* Convert "nulls" in the source data, expressed as "\\N", to Ruby `nil`s (@gabebw)
+
 # v1.3.0 (26 June 2019)
 
- * Expose the time zone that an airport is located in with `#tz_name` (@gabebw)
+* Expose the time zone that an airport is located in with `#tz_name` (@gabebw)
 
 # v1.2.0 (11 March 2018)
 
