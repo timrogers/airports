@@ -1,5 +1,4 @@
 version: 2
-
 references:
   steps: &steps
     - checkout
@@ -37,9 +36,14 @@ jobs:
     docker:
       - image: ruby:2.5
     steps: *steps
+  build-ruby26:
+    docker:
+      - image: ruby:2.6
+    steps: *steps
 workflows:
   version: 2
   tests:
     jobs:
       - build-ruby24
       - build-ruby25
+      - build-ruby26
