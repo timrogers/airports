@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Airports
   class Airport
     attr_reader :name, :city, :country, :iata, :icao, :latitude, :longitude,
