@@ -27,7 +27,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "gc_ruboconfig", "~> 2.3.4"
   spec.add_development_dependency "pry", "~> 0.11.3"
   spec.add_development_dependency "rake", "~> 10.0"
-  spec.add_development_dependency "rspec", "~> 3.8.0"
+  spec.add_development_dependency "rspec", "~> 3.9.0"
   spec.add_development_dependency "rspec-its", "~> 1.2.0"
   spec.add_development_dependency "rspec_junit_formatter", "~> 0.4.0"
 end
