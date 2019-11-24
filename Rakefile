@@ -45,6 +45,12 @@ task :update do
     }
   end
 
+  # Istanbul (IST) is missing its time zone, so add it in
+  cleaned_data["IST"][:tz_name] = "Europe/Istanbul"
+
+  # `CPC` has an abbreviation in its name ("C. Campos"), so expand it
+  cleaned_data["CPC"][:name] = "Aviador Carlos Campos Airport"
+
   # Hyderabad (HYD) is missing, so add it in
   cleaned_data["HYD"] = {
     name: "Rajiv Gandhi International Airport",
