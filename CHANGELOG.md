@@ -1,3 +1,8 @@
+# v1.4.1 (14 November 2019)
+
+* Correct the time zone of Istanbul Airport (`IST`) (@aliismayilov)
+* Correct the name of Aviador Carlos Campos Airport (`CPC`) (@jpgarritano)
+
 # v1.4.0 (30 June 2019)
 
 * Drop support for Ruby 2.2 and 2.3, which are no longer officially supported (@timrogers)
