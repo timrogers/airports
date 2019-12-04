@@ -17,6 +17,10 @@ module Airports
     all.find { |airport| airport.icao == icao_code }
   end
 
+  def self.find_all_by_city_name(city_name)
+    all.select { |airport| airport.city.casecmp(city_name).zero? }
+  end
+
   def self.iata_codes
     parsed_data.keys
   end

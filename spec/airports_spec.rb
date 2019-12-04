@@ -70,10 +70,31 @@ RSpec.describe Airports do
     context "with a code that is too long" do
       let(:icao_code) { "ALICE" }
 
-      it "doesn't try to look it up" do
-        expect(described_class.parsed_data).to_not receive(:fetch).with(icao_code, nil)
-        find_by_icao_code
-      end
+      it { is_expected.to be_nil }
+    end
+  end
+
+  describe ".find_all_by_city_name" do
+    subject(:find_all_by_city_name) do
+      described_class.find_all_by_city_name(city_name)
+    end
+
+    context "with a city name that has matches" do
+      let(:city_name) { "London" }
+
+      its(:length) { is_expected.to eq(7) }
+    end
+
+    context "with a city name that has matches, apart from case" do
+      let(:city_name) { "lOnDoN" }
+
+      its(:length) { is_expected.to eq(7) }
+    end
+
+    context "with a non-matching city name" do
+      let(:city_name) { "Asgard" }
+
+      it { is_expected.to be_empty }
     end
   end
 end
