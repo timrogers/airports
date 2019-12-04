@@ -1,3 +1,10 @@
+# v1.5.0 (5 December 2019)
+
+* Support looking up airports by the name of the city they
+are located in with `Airports.find_all_by_city_name` (@viral810, @timrogers)
+* Refactor `Airports` so `Airport` objects are only generated once
+and the code is cleaner (@timrogers)
+
 # v1.4.1 (14 November 2019)
 
 * Correct the time zone of Istanbul Airport (`IST`) (@aliismayilov)
