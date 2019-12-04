@@ -8,25 +8,17 @@ module Airports
   def self.find_by_iata_code(iata_code)
     return unless iata_code.length == 3
 
-    airport_data = parsed_data.fetch(iata_code, nil)
-
-    return unless airport_data
-
-    Airport.
-      new(airport_data.each_with_object({}) { |(k, v), h| h[k.to_sym] = v })
+    all.find { |airport| airport.iata == iata_code }
   end
 
   def self.find_by_icao_code(icao_code)
     return unless icao_code.length == 4
 
-    airport_data = parsed_data.values.find do |data|
-      data["icao"] == icao_code
-    end
+    all.find { |airport| airport.icao == icao_code }
+  end
 
-    return unless airport_data
-
-    Airport.
-      new(airport_data.each_with_object({}) { |(k, v), h| h[k.to_sym] = v })
+  def self.find_all_by_city_name(city_name)
+    all.select { |airport| airport.city.casecmp(city_name).zero? }
   end
 
   def self.iata_codes
@@ -34,15 +26,24 @@ module Airports
   end
 
   def self.all
-    @all ||= parsed_data.map do |_iata_code, airport_data|
-      Airport.
-        new(airport_data.each_with_object({}) { |(k, v), h| h[k.to_sym] = v })
+    @all ||= parsed_data.values.map do |airport_data|
+      airport_from_parsed_data_element(airport_data)
     end
   end
 
   def self.parsed_data
     @parsed_data ||= JSON.parse(data)
   end
+
+  def self.airport_from_parsed_data_element(parsed_data_element)
+    # TODO: Once we're using Ruby 2.5+, use Hash#transform_keys here to symbolize the keys
+    transformed_hash = parsed_data_element.each_with_object({}) do |(k, v), hash|
+      hash[k.to_sym] = v
+    end
+
+    Airport.new(transformed_hash)
+  end
+  private_class_method :airport_from_parsed_data_element
 
   def self.data
     @data ||= File.read(data_path)
