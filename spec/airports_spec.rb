@@ -7,6 +7,18 @@ RSpec.describe Airports do
     expect(Airports::VERSION).to_not be nil
   end
 
+  describe "patches" do
+    subject(:find_by_iata_code) do
+      described_class.find_by_iata_code(iata_code)
+    end
+
+    context "applies to existing values" do
+      let(:iata_code) { "IST" }
+
+      its(:tz_name) { is_expected.to eq("Europe/Istanbul") }
+    end
+  end
+
   describe ".find_by_iata_code" do
     subject(:find_by_iata_code) do
       described_class.find_by_iata_code(iata_code)
