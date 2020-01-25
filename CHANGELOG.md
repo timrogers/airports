@@ -1,3 +1,8 @@
+# v1.6.0 (25 January 2020)
+
+* Update airport data with the latest from [OpenFlights](http://openflights.org)
+* Refactor how incorrect or missing data from OpenFlights is patched (@MatjazKavcic)
+
 # v1.5.0 (5 December 2019)
 
 * Support looking up airports by the name of the city they
