@@ -20,12 +20,12 @@ end
 
 task :update do
   raw_data = open("https://raw.githubusercontent.com/jpatokal/openflights/master/data/" \
-                  "airports.dat").read
+                  "airports.dat").read + File.read("./data/patches.dat")
+
   cleaned_data = raw_data.gsub(/\\"/, '""')
 
   cleaned_data = CSV.parse(cleaned_data).each_with_object({}) do |row, accumulator|
-    # Doha is missing its IATA code, for some reason 🙄
-    iata_code = row[5] == "OTBD" ? "DOH" : row[4]
+    iata_code = row[4]
 
     # We'll skip other airports which don't have IATA codes
     next unless iata_code != "\\N"
@@ -44,27 +44,6 @@ task :update do
       tz_name: check_for_empty_data(row[11]),
     }
   end
-
-  # Istanbul (IST) is missing its time zone, so add it in
-  cleaned_data["IST"][:tz_name] = "Europe/Istanbul"
-
-  # `CPC` has an abbreviation in its name ("C. Campos"), so expand it
-  cleaned_data["CPC"][:name] = "Aviador Carlos Campos Airport"
-
-  # Hyderabad (HYD) is missing, so add it in
-  cleaned_data["HYD"] = {
-    name: "Rajiv Gandhi International Airport",
-    city: "Hyderabad",
-    country: "India",
-    iata: "HYD",
-    icao: "VOHS",
-    latitude: "17.2403",
-    longitude: "78.4294",
-    altitude: nil,
-    timezone: "N",
-    dst: "5.5",
-    tz_name: "Asia/Calcutta",
-  }
 
   File.open("data/airports.json", "w").puts JSON.generate(cleaned_data)
 end
