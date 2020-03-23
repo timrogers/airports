@@ -25,7 +25,7 @@ Gem::Specification.new do |spec|
   spec.required_ruby_version = ">= 2.4"
 
   spec.add_development_dependency "gc_ruboconfig", "~> 2.9.0"
-  spec.add_development_dependency "pry", "~> 0.12.2"
+  spec.add_development_dependency "pry", "~> 0.13.0"
   spec.add_development_dependency "rake", "~> 13.0"
   spec.add_development_dependency "rspec", "~> 3.9.0"
   spec.add_development_dependency "rspec-its", "~> 1.3.0"
