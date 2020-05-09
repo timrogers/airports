@@ -17,6 +17,12 @@ RSpec.describe Airports do
 
       its(:tz_name) { is_expected.to eq("Europe/Istanbul") }
     end
+
+    context "adds new entries" do
+      let(:iata_code) { "BER" }
+
+      its(:name) { is_expected.to eq("Berlin Brandenburg Airport") }
+    end
   end
 
   describe ".find_by_iata_code" do
