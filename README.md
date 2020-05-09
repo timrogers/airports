@@ -4,14 +4,14 @@
 
 Airports gives you access to data on airports around the world.
 
-It's based on data from [OpenFlights](http://openflights.org), with a bit of massaging on the way (dropping airports without an IATA code, giving Doha its IATA code and adding Hyderabad which is missing entirely).
+It's based on data from [OpenFlights](http://openflights.org), with a bit of massaging on the way (dropping airports without an IATA code, giving Doha its IATA code and adding `HYD` and `BER` which are missing entirely).
 
 ## Usage
 
 Install the gem by adding it to your Gemfile:
 
 ```ruby
-gem 'airports', '~> 1.3.0'
+gem 'airports', '~> 1.6.1'
 ```
 
 You can then look up an airport by its IATA code (e.g. `LHR` for London Heathrow) using `Airports.find_by_iata_code`, which returns an object with a bunch of accessors like `name` and `city`:

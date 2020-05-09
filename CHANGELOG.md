@@ -1,3 +1,8 @@
+# v1.6.1 (9 May 2020)
+
+* Add an entry for Berlin Brandenburg Airport (`BER`), which is missing from [OpenFlights](http://openflights.org) (@PavelWeSki)
+* Update airport data with the latest from [OpenFlights](http://openflights.org)
+
 # v1.6.0 (25 January 2020)
 
 * Update airport data with the latest from [OpenFlights](http://openflights.org)
