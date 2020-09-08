@@ -41,7 +41,7 @@ module Airports
       hash[k.to_sym] = v
     end
 
-    Airport.new(transformed_hash)
+    Airport.new(**transformed_hash)
   end
   private_class_method :airport_from_parsed_data_element
 
