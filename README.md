@@ -1,6 +1,6 @@
 # Airports
 
-[![Gem Version](https://badge.fury.io/rb/airports.svg)](http://badge.fury.io/rb/airports) [![Build Status](https://travis-ci.org/timrogers/airports.svg)](https://travis-ci.org/timrogers/airports)
+[![Gem Version](https://badge.fury.io/rb/airports.svg)](http://badge.fury.io/rb/airports)
 
 Airports gives you access to data on airports around the world.
 
