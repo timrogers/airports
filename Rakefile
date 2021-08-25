@@ -20,8 +20,8 @@ end
 
 desc "Updates the airports data file based on the OpenFlights source and our patches"
 task :update do
-  raw_data = open("https://raw.githubusercontent.com/jpatokal/openflights/master/data/" \
-                  "airports.dat").read + File.read("./data/patches.dat")
+  raw_data = URI.open("https://raw.githubusercontent.com/jpatokal/openflights/master/" \
+                      "data/airports.dat").read + File.read("./data/patches.dat")
 
   cleaned_data = raw_data.gsub(/\\"/, '""')
 
