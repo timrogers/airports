@@ -1,3 +1,10 @@
+# v1.7.0 (25 August 2021)
+
+* Add support for Ruby 3.0 (@timrogers, with thanks to @kleinjm)
+* Add Misrata Airport (`MRA`) in Libya (@timrogers, with thanks to @a21-kevin)
+* Drop support for Ruby 2.4 and 2.5, which are no longer officially supported (@timrogers)
+* Remove unnecessary dependencies from the gemspec, moving them to the `Gemfile` (@timrogers)
+
 # v1.6.1 (9 May 2020)
 
 * Add an entry for Berlin Brandenburg Airport (`BER`), which is missing from [OpenFlights](http://openflights.org) (@PavelWeSki)
