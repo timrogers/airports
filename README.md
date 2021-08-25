@@ -36,7 +36,7 @@ You can call `Airports.iata_codes` for a list of valid IATA codes, perfect for R
 validates :destination_airport, inclusion: { in: Airports.iata_codes, message: "is not a valid airport" }
 ```
 
-Or `Airport.all` will provide `Airports::Airport` objects representing all the airports the gem knows about.
+Or `Airports.all` will provide `Airports::Airport` objects representing all the airports the gem knows about.
 
 ## Development
 
