@@ -23,11 +23,4 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.required_ruby_version = ">= 2.6"
-
-  spec.add_development_dependency "gc_ruboconfig", "~> 2.28.0"
-  spec.add_development_dependency "pry", "~> 0.13.1"
-  spec.add_development_dependency "rake", "~> 13.0"
-  spec.add_development_dependency "rspec", "~> 3.9.0"
-  spec.add_development_dependency "rspec-its", "~> 1.3.0"
-  spec.add_development_dependency "rspec_junit_formatter", "~> 0.4.0"
 end
