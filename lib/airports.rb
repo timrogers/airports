@@ -39,7 +39,7 @@ module Airports
     # TODO: Once we're using Ruby 2.5+, use Hash#transform_keys here to symbolize the keys
     transformed_hash = parsed_data_element.transform_keys(&:to_sym)
 
-    Airport.new(transformed_hash)
+    Airport.new(**transformed_hash)
   end
   private_class_method :airport_from_parsed_data_element
 
