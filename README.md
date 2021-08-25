@@ -1,8 +1,8 @@
 # Airports
 
-[![Gem Version](https://badge.fury.io/rb/airports.svg)](http://badge.fury.io/rb/airports) [![Build Status](https://travis-ci.org/timrogers/airports.svg)](https://travis-ci.org/timrogers/airports)
+[![Gem Version](https://badge.fury.io/rb/airports.svg)](http://badge.fury.io/rb/airports)
 
-Airports gives you access to data on airports around the world.
+Airports gives you access to data on airports around the world from your Ruby applications.
 
 It's based on data from [OpenFlights](http://openflights.org), with a bit of massaging on the way (dropping airports without an IATA code, giving Doha its IATA code and adding `HYD` and `BER` which are missing entirely).
 
