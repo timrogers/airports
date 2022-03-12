@@ -9,6 +9,6 @@ gem "pry", "~> 0.14.1"
 gem "rake", "~> 13.0"
 gem "rspec", "~> 3.11.0"
 gem "rspec-its", "~> 1.3.0"
-gem "rspec_junit_formatter", "~> 0.4.0"
+gem "rspec_junit_formatter", "~> 0.5.1"
 gem "rubocop", "~> 1.19.1"
 gem "rubocop-rake", "~> 0.6.0", require: false
