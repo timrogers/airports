@@ -4,7 +4,7 @@ require "spec_helper"
 
 RSpec.describe Airports do
   it "has a version number" do
-    expect(Airports::VERSION).to_not be nil
+    expect(Airports::VERSION).to_not be_nil
   end
 
   describe "patches" do
