@@ -40,6 +40,10 @@ jobs:
     docker:
       - image: ruby:3.0
     steps: *steps
+  build-ruby31:
+    docker:
+      - image: ruby:3.1
+    steps: *steps
 workflows:
   version: 2
   tests:
@@ -47,3 +51,4 @@ workflows:
       - build-ruby26
       - build-ruby27
       - build-ruby30
+      - build-ruby31
