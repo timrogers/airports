@@ -1,3 +1,8 @@
+## v1.8.0 (13 March 2022)
+
+* Add support for Ruby 3.1 (@timrogers)
+* Fix the names of Ningbo (NGB) and Changsha (CSX) airports in China (@ratazzi)
+
 # v1.7.0 (25 August 2021)
 
 * Add support for Ruby 3.0 (@timrogers, with thanks to @kleinjm)

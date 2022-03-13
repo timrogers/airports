@@ -11,7 +11,7 @@ It's based on data from [OpenFlights](http://openflights.org), with a bit of mas
 Install the gem by adding it to your Gemfile:
 
 ```ruby
-gem "airports", "~> 1.7.0"
+gem "airports", "~> 1.8.0"
 ```
 
 You can then look up an airport by its IATA code (e.g. `LHR` for London Heathrow) using `Airports.find_by_iata_code`, which returns an object with a bunch of accessors like `name` and `city`:
