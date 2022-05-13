@@ -4,11 +4,3 @@ updates:
   directory: "/"
   schedule:
     interval: daily
-  open-pull-requests-limit: 10
-  ignore:
-  - dependency-name: pry
-    versions:
-    - 0.14.0
-  - dependency-name: gc_ruboconfig
-    versions:
-    - 2.24.0
