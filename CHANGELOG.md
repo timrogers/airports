@@ -1,3 +1,7 @@
+## v1.8.1 (17 February 2023)
+
+* Fix the name of Tromsø Airport (TOS) (@pcothenet)
+
 ## v1.8.0 (13 March 2022)
 
 * Add support for Ruby 3.1 (@timrogers)
