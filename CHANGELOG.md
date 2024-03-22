@@ -1,3 +1,7 @@
+## v1.8.2 (22 March, 2024)
+
+* Add the new Tulum Airport (TQO) (@rmm5t)
+
 ## v1.8.1 (17 February 2023)
 
 * Fix the name of Tromsø Airport (TOS) (@pcothenet)
