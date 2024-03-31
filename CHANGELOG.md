@@ -1,3 +1,7 @@
+## v1.8.3 (31 March, 2024)
+
+* Add Kertajati International Airport (KJT) (@chakraskun)
+
 ## v1.8.2 (22 March, 2024)
 
 * Add the new Tulum Airport (TQO) (@rmm5t)
