@@ -21,6 +21,10 @@ module Airports
     all.select { |airport| airport.city.casecmp(city_name).zero? }
   end
 
+  def self.find_all_by_country_name(country_name)
+    all.select { |airport| airport.country.casecmp(country_name).zero? }
+  end
+
   def self.iata_codes
     parsed_data.keys
   end
