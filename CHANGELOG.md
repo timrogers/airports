@@ -1,3 +1,7 @@
+## v1.9.0 (4 May, 2024)
+
+* Add new `.find_all_by_country_name` method (@wilburhimself)
+
 ## v1.8.3 (31 March, 2024)
 
 * Add Kertajati International Airport (KJT) (@chakraskun)
