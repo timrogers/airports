@@ -128,7 +128,7 @@ RSpec.describe Airports do
     end
 
     context "with a country name that has matches, apart from case" do
-      let(:country_name) { "DOMinICan rEpUBliC"}
+      let(:country_name) { "DOMinICan rEpUBliC" }
 
       its(:length) { is_expected.to eq(11) }
     end
