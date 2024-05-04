@@ -115,4 +115,28 @@ RSpec.describe Airports do
       it { is_expected.to be_empty }
     end
   end
+
+  describe ".find_all_by_country_name" do
+    subject(:find_all_by_country_name) do
+      described_class.find_all_by_country_name(country_name)
+    end
+
+    context "with a country name that has matches" do
+      let(:country_name) { "Dominican Republic" }
+
+      its(:length) { is_expected.to eq(11) }
+    end
+
+    context "with a country name that has matches, apart from case" do
+      let(:country_name) { "DOMinICan rEpUBliC" }
+
+      its(:length) { is_expected.to eq(11) }
+    end
+
+    context "with a non-matching country name" do
+      let(:country_name) { "XYZabc" }
+
+      its(:length) { is_expected.to eq(0) }
+    end
+  end
 end
