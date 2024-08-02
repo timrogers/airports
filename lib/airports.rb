@@ -25,6 +25,14 @@ module Airports
     all.select { |airport| airport.country.casecmp(country_name).zero? }
   end
 
+  def self.find_all_by_tz_name(tzname)
+    all.find { |airport| airport.tzname == tzname }
+  end
+
+  def self.find_all_by_timezne(timezone)
+    all.select { |airport| airport.timezone == timezone }
+  end
+
   def self.iata_codes
     parsed_data.keys
   end
