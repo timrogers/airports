@@ -5,7 +5,7 @@ source 'https://rubygems.org'
 gemspec
 
 gem "gc_ruboconfig", "~> 5.0.2"
-gem "pry", "~> 0.14.1"
+gem "pry", "~> 0.15.0"
 gem "rake", "~> 13.0"
 gem "rspec", "~> 3.13.0"
 gem "rspec-its", "~> 1.3.0"
