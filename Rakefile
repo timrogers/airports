@@ -23,7 +23,7 @@ task :update do
   raw_data = URI.open("https://raw.githubusercontent.com/jpatokal/openflights/master/" \
                       "data/airports.dat").read + File.read("./data/patches.dat")
 
-  cleaned_data = raw_data.gsub(/\\"/, '""')
+  cleaned_data = raw_data.gsub('\"', '""')
 
   cleaned_data = CSV.parse(cleaned_data).each_with_object({}) do |row, accumulator|
     iata_code = row[4]
