@@ -60,6 +60,13 @@ RSpec.describe Airports do
     it { is_expected.to include("LHR") }
   end
 
+  describe ".icao_codes" do
+    subject { described_class.icao_codes }
+
+    it { is_expected.to be_a(Array) }
+    it { is_expected.to include("EGLL") }
+  end
+
   describe ".all" do
     subject { described_class.all }
 

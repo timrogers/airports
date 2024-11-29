@@ -29,6 +29,10 @@ module Airports
     parsed_data.keys
   end
 
+  def self.icao_codes
+    parsed_data.values.map { |airport_data| airport_data["icao"] }
+  end
+
   def self.all
     @all ||= parsed_data.values.map do |airport_data|
       airport_from_parsed_data_element(airport_data)
