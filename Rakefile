@@ -46,7 +46,8 @@ task :update do
     }
   end
 
-  File.open("data/airports.json", "w").puts JSON.generate(cleaned_data)
+  f = File.open("data/airports.json", "w")
+  f.write(JSON.generate(cleaned_data))
 end
 
 task default: :spec
