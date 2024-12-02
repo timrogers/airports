@@ -46,7 +46,9 @@ task :update do
     }
   end
 
-  f = File.open("data/airports.json", "w")
+  File.open("data/airports.json", "w") do |f|
+    f.write(JSON.generate(cleaned_data))
+  end
   f.write(JSON.generate(cleaned_data))
 end
 
