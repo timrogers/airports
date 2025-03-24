@@ -1,3 +1,7 @@
+## v1.11.0 (24 March, 2025)
+
+- Add Monmouth Executive Airport (BLM) (@FinnLawrence)
+
 ## v1.10.0 (29 November, 2024)
 
 - Add new `.icao_codes` method (@FinnLawrence)
