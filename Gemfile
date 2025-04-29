@@ -10,5 +10,5 @@ gem "rake", "~> 13.0"
 gem "rspec", "~> 3.13.0"
 gem "rspec-its", "~> 2.0.0"
 gem "rspec_junit_formatter", "~> 0.6.0"
-gem "rubocop", "~> 1.74.0"
+gem "rubocop", "~> 1.75.4"
 gem "rubocop-rake", "~> 0.7.1", require: false
