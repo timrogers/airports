@@ -1,0 +1,169 @@
+plugins:
+  - rubocop-rails
+  - rubocop-rspec_rails
+
+Rails/AddColumnIndex:
+  Enabled: false
+
+Rails/CompactBlank:
+  Enabled: true
+
+Rails/DurationArithmetic:
+  Enabled: true
+
+Rails/EagerEvaluationLogMessage:
+  Enabled: true
+
+Rails/ExpandedDateRange:
+  Enabled: true
+
+Rails/I18nLocaleAssignment:
+  Enabled: true
+
+Rails/RedundantPresenceValidationOnBelongsTo:
+  Enabled: true
+
+Rails/RedundantTravelBack:
+  Enabled: true
+
+Rails/RootJoinChain:
+  Enabled: true
+
+Rails/TimeZoneAssignment:
+  Enabled: true
+
+Rails/UnusedIgnoredColumns:
+  Enabled: true
+
+Rails/ActiveRecordCallbacksOrder:
+  Enabled: true
+
+Rails/AfterCommitOverride:
+  Enabled: true
+
+Rails/AttributeDefaultBlockValue:
+  Enabled: true
+
+Rails/FindById:
+  Enabled: true
+
+Rails/Inquiry:
+  Enabled: true
+
+Rails/MailerName:
+  Enabled: true
+
+Rails/MatchRoute:
+  Enabled: true
+
+Rails/NegateInclude:
+  Enabled: true
+
+Rails/Pluck:
+  Enabled: true
+
+Rails/PluckInWhere:
+  Enabled: true
+
+Rails/RenderInline:
+  Enabled: true
+
+Rails/RenderPlainText:
+  Enabled: true
+
+Rails/ShortI18n:
+  Enabled: false
+
+Rails/SquishedSQLHeredocs:
+  Enabled: true
+
+Rails/WhereEquals:
+  Enabled: true
+
+Rails/WhereExists:
+  Enabled: true
+
+Rails/WhereNot:
+  Enabled: true
+
+Rails/ActionControllerTestCase:
+  Enabled: true
+
+Rails/DeprecatedActiveModelErrorsMethods:
+  Enabled: true
+
+Rails/DuplicateAssociation:
+  Enabled: true
+
+Rails/DuplicateScope:
+  Enabled: true
+
+Rails/I18nLazyLookup:
+  Enabled: true
+
+Rails/I18nLocaleTexts:
+  Enabled: true
+
+Rails/MigrationClassName:
+  Enabled: true
+
+Rails/TransactionExitStatement:
+  Enabled: true
+
+Rails/ActionControllerFlashBeforeRender: # new in 2.16
+  Enabled: true
+
+Rails/ActiveSupportOnLoad: # new in 2.16
+  Enabled: true
+
+Rails/DotSeparatedKeys: # new in 2.15
+  Enabled: true
+
+Rails/FreezeTime: # new in 2.16
+  Enabled: true
+
+Rails/RootPathnameMethods: # new in 2.16
+  Enabled: true
+
+Rails/RootPublicPath: # new in 2.15
+  Enabled: true
+
+Rails/StripHeredoc: # new in 2.15
+  Enabled: true
+
+Rails/ToFormattedS: # new in 2.15
+  Enabled: true
+
+Rails/ToSWithArgument: # new in 2.16
+  Enabled: true
+
+Rails/TopLevelHashWithIndifferentAccess: # new in 2.16
+  Enabled: true
+
+Rails/WhereMissing: # new in 2.16
+  Enabled: true
+
+RSpecRails/HaveHttpStatus: # new in 2.12
+  Enabled: true
+
+RSpecRails/AvoidSetupHook:
+  Enabled: true
+
+RSpecRails/HttpStatus:
+  EnforcedStyle: numeric
+
+RSpecRails/InferredSpecType: # new in 2.14
+  Enabled: false
+
+Rails/ActionOrder: # new in 2.17
+  Enabled: false
+
+Rails/IgnoredColumnsAssignment: # new in 2.17
+  Enabled: true
+
+# Only relevant for Rails < 6.1
+Rails/WhereNotWithMultipleConditions: # new in 2.17
+  Enabled: false
+
+Rails/WhereRange: # New in 2.25
+  Enabled: false
