@@ -44,7 +44,6 @@ module Airports
   end
 
   def self.airport_from_parsed_data_element(parsed_data_element)
-    # TODO: Once we're using Ruby 2.5+, use Hash#transform_keys here to symbolize the keys
     transformed_hash = parsed_data_element.transform_keys(&:to_sym)
 
     Airport.new(**transformed_hash)
