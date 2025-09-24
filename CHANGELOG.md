@@ -1,3 +1,8 @@
+## v1.13.0 (TBD)
+
+- Upgrade to Ruby 3.4.1 (@timrogers)
+- Drop support for Ruby 2.6, 2.7, and 3.0, which are no longer officially supported (@timrogers)
+
 ## v1.11.0 (24 March, 2025)
 
 - Add Monmouth Executive Airport (BLM) (@FinnLawrence)
