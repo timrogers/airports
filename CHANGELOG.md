@@ -1,3 +1,7 @@
+## Unreleased
+
+- Update Ruby to 3.4.6 (latest stable version)
+
 ## v1.11.0 (24 March, 2025)
 
 - Add Monmouth Executive Airport (BLM) (@FinnLawrence)
