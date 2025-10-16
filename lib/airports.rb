@@ -51,7 +51,8 @@ module Airports
 
   def self.icao_index
     @icao_index ||= parsed_data.values.each_with_object({}) do |airport_data, index|
-      index[airport_data["icao"]] = airport_data
+      icao = airport_data["icao"]
+      index[icao] = airport_data if icao
     end
   end
   private_class_method :icao_index
