@@ -32,7 +32,7 @@ module Airports
   end
 
   def self.icao_codes
-    @icao_codes ||= parsed_data.values.map { |airport_data| airport_data["icao"] }
+    @icao_codes ||= parsed_data.values.map { |airport_data| airport_data["icao"] }.compact
   end
 
   def self.all
@@ -47,13 +47,13 @@ module Airports
 
   def self.icao_index
     @icao_index ||= parsed_data.values.each_with_object({}) do |airport_data, index|
-      index[airport_data["icao"]] = airport_data
+      icao = airport_data["icao"]
+      index[icao] = airport_data if icao
     end
   end
   private_class_method :icao_index
 
   def self.airport_from_parsed_data_element(parsed_data_element)
-    # TODO: Once we're using Ruby 2.5+, use Hash#transform_keys here to symbolize the keys
     transformed_hash = parsed_data_element.transform_keys(&:to_sym)
 
     Airport.new(**transformed_hash)
