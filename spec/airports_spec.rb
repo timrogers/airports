@@ -146,4 +146,37 @@ RSpec.describe Airports do
       its(:length) { is_expected.to eq(0) }
     end
   end
+
+  describe ".find_all_by_tzname" do
+    subject(:find_all_by_tzname) do
+      described_class.find_all_by_tzname(tzname)
+    end
+
+    context "with a timezone name that has matches" do
+      let(:tzname) { "Europe/London" }
+
+      it { is_expected.to be_a(Array) }
+      its(:length) { is_expected.to eq(106) }
+
+      it "returns Airport objects" do
+        expect(find_all_by_tzname.first).to be_a(Airports::Airport)
+      end
+
+      it "returns airports with matching timezone" do
+        expect(find_all_by_tzname.all? { |a| a.tz_name == "Europe/London" }).to be true
+      end
+    end
+
+    context "with a timezone name that has matches, apart from case" do
+      let(:tzname) { "eUrOpE/lOnDoN" }
+
+      its(:length) { is_expected.to eq(106) }
+    end
+
+    context "with a non-matching timezone name" do
+      let(:tzname) { "Invalid/Timezone" }
+
+      it { is_expected.to be_empty }
+    end
+  end
 end
