@@ -8,21 +8,21 @@ module Airports
   def self.find_by_iata_code(iata_code)
     return unless iata_code.length == 3
 
-    all.find { |airport| airport.iata == iata_code }
+    all.find { _1.iata == iata_code }
   end
 
   def self.find_by_icao_code(icao_code)
     return unless icao_code.length == 4
 
-    all.find { |airport| airport.icao == icao_code }
+    all.find { _1.icao == icao_code }
   end
 
   def self.find_all_by_city_name(city_name)
-    all.select { |airport| airport.city.casecmp(city_name).zero? }
+    all.select { _1.city.casecmp(city_name).zero? }
   end
 
   def self.find_all_by_country_name(country_name)
-    all.select { |airport| airport.country.casecmp(country_name).zero? }
+    all.select { _1.country.casecmp(country_name).zero? }
   end
 
   def self.iata_codes
@@ -30,7 +30,7 @@ module Airports
   end
 
   def self.icao_codes
-    parsed_data.values.map { |airport_data| airport_data["icao"] }
+    parsed_data.values.map { _1["icao"] }
   end
 
   def self.all
@@ -44,7 +44,6 @@ module Airports
   end
 
   def self.airport_from_parsed_data_element(parsed_data_element)
-    # TODO: Once we're using Ruby 2.5+, use Hash#transform_keys here to symbolize the keys
     transformed_hash = parsed_data_element.transform_keys(&:to_sym)
 
     Airport.new(**transformed_hash)

@@ -8,15 +8,9 @@ require "open-uri"
 
 RSpec::Core::RakeTask.new(:spec)
 
-def check_for_empty_data(field)
-  # OpenFlights uses "\\N" (i.e. a literal backslash followed by a capital N) to
-  # indicate a null field.
-  if field == "\\N"
-    nil
-  else
-    field
-  end
-end
+# OpenFlights uses "\\N" (i.e. a literal backslash followed by a capital N) to
+# indicate a null field.
+def check_for_empty_data(field) = field == "\\N" ? nil : field
 
 desc "Updates the airports data file based on the OpenFlights source and our patches"
 task :update do
