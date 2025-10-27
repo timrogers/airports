@@ -32,7 +32,7 @@ module Airports
   end
 
   def self.iata_codes
-    parsed_data.keys
+    @iata_codes ||= parsed_data.keys
   end
 
   def self.icao_codes

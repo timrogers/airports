@@ -35,6 +35,12 @@ RSpec.describe Airports do
 
       it { is_expected.to be_a(Airports::Airport) }
       its(:name) { is_expected.to eq("London Heathrow Airport") }
+
+      it "creates a new Airport object each time (not cached)" do
+        first_call = described_class.find_by_iata_code("LHR")
+        second_call = described_class.find_by_iata_code("LHR")
+        expect(first_call).to_not equal(second_call)
+      end
     end
 
     context "with an invalid IATA code" do
@@ -58,6 +64,12 @@ RSpec.describe Airports do
 
     it { is_expected.to be_a(Array) }
     it { is_expected.to include("LHR") }
+
+    it "returns the same object when called multiple times (caching)" do
+      first_call = described_class.iata_codes
+      second_call = described_class.iata_codes
+      expect(first_call).to equal(second_call)
+    end
   end
 
   describe ".icao_codes" do
@@ -65,6 +77,12 @@ RSpec.describe Airports do
 
     it { is_expected.to be_a(Array) }
     it { is_expected.to include("EGLL") }
+
+    it "returns the same object when called multiple times (caching)" do
+      first_call = described_class.icao_codes
+      second_call = described_class.icao_codes
+      expect(first_call).to equal(second_call)
+    end
   end
 
   describe ".all" do
