@@ -13,7 +13,7 @@ Gem::Specification.new do |spec|
   spec.summary = "Access data on airports from around the world"
   spec.description = "Access data on airports from around the world"
   spec.homepage = "https://github.com/timrogers/airports"
-  spec.license = "MIT"
+  spec.license = "Apache-2.0"
 
   spec.files = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features)/})
