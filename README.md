@@ -14,10 +14,10 @@ Install the gem by adding it to your Gemfile:
 gem "airports", "~> 1.12.0"
 ```
 
-You can then look up an airport by its IATA code (e.g. `LHR` for London Heathrow) using `Airports.find_by_iata_code`, which returns an object with a bunch of accessors like `name` and `city`:
+You can then look up an airport by its IATA code (e.g. `LHR` for London Heathrow) using `Airports.look_up_by_iata_code`, which returns an object with a bunch of accessors like `name` and `city`:
 
 ```ruby
-Airports.find_by_iata_code("LHR")
+Airports.look_up_by_iata_code("LHR")
 => #<Airports::Airport:0x00007fdbd1df68d0 @name="London Heathrow Airport", @city="London", @country="United Kingdom", @iata="LHR", @icao="EGLL", @latitude="51.4706", @longitude="-0.461941", @altitude="83", @timezone="0", @dst="E", @tz_name="Europe/London">
 ```
 

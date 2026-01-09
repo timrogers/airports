@@ -5,7 +5,7 @@ require "airports/version"
 require "airports/airport"
 
 module Airports
-  def self.find_by_iata_code(iata_code)
+  def self.look_up_by_iata_code(iata_code)
     return unless iata_code.length == 3
 
     all.find { |airport| airport.iata == iata_code }
