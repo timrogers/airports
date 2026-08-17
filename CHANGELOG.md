@@ -1,10 +1,15 @@
 ## v1.14.0 (17 August, 2026)
 
 - Add DJT/KDJT airport code mapping for renamed Palm Beach airport (@Copilot)
+- Update rubocop requirement from ~> 1.88.0 to ~> 1.89.0 (@dependabot)
 
 ## v1.13.0 (2 April, 2026)
 
 - Fix name for `PBH` from Thimphu to Paro (@Copilot)
+- Update rubocop requirement from ~> 1.78.0 to ~> 1.84.2 (@dependabot)
+- Update pry requirement from ~> 0.15.0 to ~> 0.16.0 (@dependabot)
+- Bump actions/checkout from 4 to 6 (@dependabot)
+- Bump github/codeql-action from 3 to 4 (@dependabot)
 
 ## v1.12.0 (21 July, 2025)
 
