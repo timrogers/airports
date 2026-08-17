@@ -37,6 +37,13 @@ RSpec.describe Airports do
       its(:name) { is_expected.to eq("London Heathrow Airport") }
     end
 
+    context "with a renamed IATA code from patches" do
+      let(:iata_code) { "DJT" }
+
+      it { is_expected.to be_a(Airports::Airport) }
+      its(:icao) { is_expected.to eq("KDJT") }
+    end
+
     context "with an invalid IATA code" do
       let(:iata_code) { "XOX" }
 
@@ -84,6 +91,13 @@ RSpec.describe Airports do
 
       it { is_expected.to be_a(Airports::Airport) }
       its(:name) { is_expected.to eq("Jacksonville Executive at Craig Airport") }
+    end
+
+    context "with a renamed ICAO code from patches" do
+      let(:icao_code) { "KDJT" }
+
+      it { is_expected.to be_a(Airports::Airport) }
+      its(:iata) { is_expected.to eq("DJT") }
     end
 
     context "with an invalid ICAO code" do
